@@ -44,3 +44,12 @@ testenv:
 		-w $(WORKING_DIR) \
 		ruby:2.7 \
 		/bin/bash -c "bundle install ; bash"
+
+.PHONY: test
+test:
+	docker run \
+		--rm -it \
+		-v $(PWD):$(WORKING_DIR) \
+		-w $(WORKING_DIR) \
+		ruby:2.7 \
+		/bin/bash -c "bundle install && chmod +x test.sh && IAPI_KEY=$(IAPI_KEY) MAPI_KEY=$(MAPI_KEY) ./test.sh"

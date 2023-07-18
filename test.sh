@@ -1,0 +1,5 @@
+rspec spec/api/management_api_spec.rb -e 'get_application test'
+rspec spec/api/management_api_spec.rb -e 'add_loyalty_points test'
+rspec spec/api/integration_api_spec.rb -e 'update_customer_session_v2 test' -e 'get_customer_session test'
+rspec spec/api/integration_api_spec.rb -e 'update_customer_profile_v2 test'
+rspec spec/api/integration_api_spec.rb -e 'reopen_customer_session test'
